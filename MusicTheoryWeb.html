@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+       Basic Music Theory
+    </title>
+</head>
+
+<body>
+  <div id="mttestcontent">
+    <h1 id="mttesttitle">
+        Basic Music Theory
+    </h1>
+
+    <p id = "GFG_UP">
+    </p>
+
+    <button id = "mttestbutton" onclick = "GFG_Fun()">
+        Generate
+    </button>
+
+    <p id = "GFG_DOWN" style =
+        "font-size: 24px; font-weight: bold; color: green;">
+    </p>
+
+    <script>
+        var up = document.getElementById('GFG_UP');
+        var down = document.getElementById('GFG_DOWN');
+
+        var get_test = ["调名判断","同名调式","三和弦组成","三和弦转位","上下目标音音程","引申音","七和弦组成音","调式音阶","七和弦转位"];
+        var get_key = ["A", "B", "C", "D","E", "F", "G","Ab", "Bb", "Db", "Eb","Gb"];
+        var get_mode = ["Ionian","Dorian","Phrygian","Lydian","Mixo-Lydian","Aeolian","Locrian"];
+        var get_triad = ["大三和弦","小三和弦","增三和弦","减三和弦"];
+        var get_7thchord = ["大七和弦","属七和弦","小七和弦","半减七和弦","减七和弦","小大七和弦"];
+        var get_updown = ["上","下"];
+        var get_91113 = ["9","11","13"];
+        var get_135 = ["1","3","5"];
+        var get_1357 = ["1","3","5","7"];
+        var get_1_7 = ["1","2","3","4","5","6","7"];
+        //var arrb = ["大三", "小三", "增三","减三"];
+
+        up.innerHTML = get_test;
+        down.innerHTML ="Click Generate";
+
+        // function show_test(){
+        //   var another_line = 0;
+        //   for (i = 0; i < get_test.length; i++) {
+        //       up.innerHTML += get_test[i] + " ";
+        //       if(another_line==2){
+        //         another_line = 0;
+        //         up.innerHTML += "</br>"
+        //       }else{
+        //         another_line++;
+        //       }
+        //    }
+        // }
+
+        function GFG_Fun() {
+          switch (get_test[Math.floor(Math.random() * get_test.length)]) {
+            case "调名判断":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                  + "&nbsp"
+                  +"唱"
+                  +"&nbsp"
+                  +get_1_7[Math.floor(Math.random() * get_1_7.length)]
+                  +"&nbsp"
+                  +"的调名";
+                break;
+            case "同名调式":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +get_mode[Math.floor(Math.random() * get_mode.length)]
+                +"&nbsp"
+                +"的调名";
+                break;
+            case "三和弦组成":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +get_triad[Math.floor(Math.random() * get_triad.length)]
+                +"&nbsp"
+                +"的组成音";
+                break;
+            case "三和弦转位":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +"唱"
+                +"&nbsp"
+                +get_135[Math.floor(Math.random() * get_135.length)]
+                +"&nbsp"
+                +"的"
+                +"&nbsp"
+                +get_triad[Math.floor(Math.random() * get_triad.length)]
+                +"的组成音";
+                break;
+              case "上下目标音音程":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +"和它"
+                +get_updown[Math.floor(Math.random() * get_updown.length)]
+                +"面"
+                +"&nbsp"
+                +get_key[Math.floor(Math.random() * get_key.length)]
+                +"的音程关系";
+                break;
+            case "引申音":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +"的"
+                +"&nbsp"
+                +get_91113[Math.floor(Math.random() * get_91113.length)]
+                +"音";
+                break;
+              case "七和弦组成音":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +get_7thchord[Math.floor(Math.random() * get_7thchord.length)]
+                +"&nbsp"
+                +"的组成音";
+                break;
+              case "七和弦转位":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +"唱"
+                +"&nbsp"
+                +get_1357[Math.floor(Math.random() * get_1357.length)]
+                +"&nbsp"
+                +"的"
+                +"&nbsp"
+                +get_7thchord[Math.floor(Math.random() * get_7thchord.length)]
+                +"的组成音";
+                break;
+            case "调式音阶":
+                down.innerHTML =
+                get_key[Math.floor(Math.random() * get_key.length)]
+                +"&nbsp"
+                +get_mode[Math.floor(Math.random() * get_mode.length)]
+                +"&nbsp"
+                +"的音阶";
+                break;
+            default:
+                down.innerHTML =  "错误";
+                break;
+            }
+            // down.innerHTML =
+            //     get_key[Math.floor(Math.random() * get_key.length)] + "&nbsp" +
+            //     get_triad[Math.floor(Math.random() * get_triad.length)];
+        }
+    </script>
+    </div>
+</body>
+
+</html>
+<style>
+#mttestcontent{
+text-align:center;
+}
+#mttesttitle{
+color:#4CAF50;
+}
+#GFG_UP{
+font-size: 15px; font-weight: bold;
+}
+#mttestbutton{
+  background-color:#4CAF50;
+  border: none;
+  color:white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
